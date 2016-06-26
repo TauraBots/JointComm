@@ -1,0 +1,2 @@
+/home/juliopcrj/workspace/Forgotten-Realms/src/jay_test_ids.c:1:23: fatal error: dynamixel.h: Arquivo ou diretório não encontrado
+compilation terminated.
