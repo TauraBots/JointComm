@@ -352,3 +352,23 @@ void dxl_write_word(int jointSocket, int id, int address, int value )
 
 	dxl_txrx_packet(jointSocket);
 }
+
+void dxl_sync_write_word(int jointSocket, int first_address,
+                    int id[], int values[], int total)
+{
+	while(giBusUsing);
+
+	gbInstructionPacket[ID] = (unsigned char)0xFE;
+	gbInstructionPacket[INSTRUCTION] = INST_SYNC_WRITE;
+
+        // Loop preenchendo parametros
+	gbInstructionPacket[PARAMETER] = (unsigned char)address;
+	gbInstructionPacket[PARAMETER+1] = (unsigned char)dxl_get_lowbyte(value);
+	gbInstructionPacket[PARAMETER+2] = (unsigned char)dxl_get_highbyte(value);
+
+        // Comprimento calculato a partir de total
+        gbInstructionPacket[LENGTH] = 5;
+
+	dxl_txrx_packet(jointSocket);
+}
+
