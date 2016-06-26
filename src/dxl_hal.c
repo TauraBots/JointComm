@@ -25,7 +25,7 @@ int dxl_hal_open(int *jointSocket, int deviceIndex, float baudrate)
 
 	gSocket_fd = -1;
 
-	sprintf(dev_name, "/dev/ttyS%d", deviceIndex);
+	sprintf(dev_name, "/dev/ttyUSB%d", deviceIndex);
 
 	strcpy(gDeviceName, dev_name);
 	memset(&newtio, 0, sizeof(newtio));
