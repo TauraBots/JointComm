@@ -7,8 +7,8 @@ extern "C" {
 
 
 ///////////// device control methods ////////////////////////
-int dxl_initialize(int *jointSocket, int deviceIndex, int baudnum);
-void dxl_terminate(int *jointSocket);
+int dxl_initialize(int deviceIndex, int baudnum);
+void dxl_terminate(int jointSocket);
 
 
 ///////////// set/get packet methods //////////////////////////
