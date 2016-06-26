@@ -1,0 +1,29 @@
+ Dimitri's Joint Scheme
+-=-=-=-=-=-=-=-=-=-=-=-=-
+
+This document explains the joint scheme of Dimitri. Dimitri is a humanoid robot
+with elastic joints in the arms and knees. The legs of Dimitri use a parallel
+link mechanism.
+
+The table below lists the ids of each servomotor and elastic element:
+
+joint         right left
+-------------------------
+ FOOT_ROLL      10    11
+ FOOT_PITCH     12    13
+ LOWER_LEG      14    15
+ UPPER_LEG      20    21
+ LEG_ROLL       22    23
+ LEG_PITCH      24    25
+ LEG_YAW        26    27
+ ARM_ROLL       30    31
+ ARM_PITCH      32    33
+ ARM_YAW        34    35
+ ELBOW          40    41
+ WAIST_ROLL     50
+ WAIST_PITCH    51
+ WAIST_YAW      52
+ NECK_PITCH     60
+ NECK_YAW       61
+
+
