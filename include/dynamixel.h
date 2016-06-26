@@ -71,7 +71,7 @@ int dxl_read_byte(int jointSocket, int id, int address);
 void dxl_write_byte(int jointSocket, int id, int address, int value);
 int dxl_read_word(int jointSocket, int id, int address);
 void dxl_write_word(int jointSocket, int id, int address, int value);
-
+void dxl_sync_write_word(int jointSocket, int first_address, int id[], int values[], int total);
 
 #ifdef __cplusplus
 }

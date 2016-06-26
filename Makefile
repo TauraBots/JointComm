@@ -1,8 +1,8 @@
 CC = gcc
 CXX = g++
 CFLAGS = -I./include -I/usr/include -pthread -Wall -O2
-CXXFLAGS = -I./include -I/usr/include -I/usr/include/opencv `pkg-config --cflags opencv` -Wall -O2
-LDFLAGS = -L./lib -lm -lpthread `pkg-config --libs opencv`
+CXXFLAGS = -I./include -I/usr/include -Wall -O2
+LDFLAGS = -L./lib -lm -lpthread
 AR = ar
 OBJECTS = obj/dynamixel.o obj/dxl_hal.o obj/jay_test_ids.o
 RM = echo "hello"
