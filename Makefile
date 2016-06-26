@@ -4,14 +4,14 @@ CFLAGS = -I./include -I/usr/include -pthread -Wall -O2
 CXXFLAGS = -I./include -I/usr/include -Wall -O2
 LDFLAGS = -L./lib -lm -lpthread
 AR = ar
-OBJECTS = obj/dynamixel.o obj/dxl_hal.o obj/jay_test_ids.o
+OBJECTS = obj/dynamixel.o obj/dxl_hal.o
 RM = echo "hello"
 INSTALL_PATH = /usr/local
 
 .SECONDARY: $(OBJECTS)
 
 .PHONY: all
-all: bin/jay_test_ids
+all: bin/syncTester 
 	@echo $(COLOR)All done! $(NOCOLOR)
 
 COLOR = '\033[0;32m'

@@ -21,14 +21,15 @@ int main(int argc, char *argv[]){
   int i;
   int jointSocket = 0;
 
+  int values[6];
   //FIXME: put the correct ID's here;
   int ids[6] = {0, };
 
   
-    if((jointSocket = dxl_initialize(socket, 8)) == 0){
-      printf("Failed to open port /dev/ttyS%d\n", socket);
-      return -1;
-
+  if((jointSocket = dxl_initialize(socket, 8)) == 0){
+    printf("Failed to open port /dev/ttyS%d\n", socket);
+    return -1;
+  }
 
   printf("Opened joint socket: %d\n", socket);
 
@@ -47,25 +48,3 @@ int main(int argc, char *argv[]){
   return EXIT_SUCCESS;
 }
 
-void *writeThread(void* n){
-  pthread_detach(pthread_self());
-  while(1){
-    pthread_mutex_lock(&lock);
-    dxl_write_word(jointSocket[1], 3, 0x1E, pos);
-    pthread_mutex_unlock(&lock);
-  }
-  return NULL;
-}
-
-void *readThread(void *n){
-  pthread_detach(pthread_self());
-  while(1){
-    pthread_mutex_lock(&lock);
-    pos = dxl_read_word(jointSocket[0], 1, 0x24);
-    if(dxl_get_result() != 1)
-      pos = -1;
-    pthread_mutex_unlock(&lock);
-    printf("%d\n", pos);
-  }
-  return NULL;
-}
